@@ -12,7 +12,9 @@ h3 = 0x10325476
 h4 = 0xC3D2E1F0
 ## Step2: Preprocessing (Padding)
 a. Append a single 1 bit to the message
+
 b. Append 0 bits until the length is 64 bits short of a multiple of 512
+
 c. Append the original message length (in bits) as a 64-bit big-endian integer
 ## Step3: Process the Message in 512-bit Blocks
 For each 512-bit block: a. Divide block into 16 words W[0..15] (32 bits each)
