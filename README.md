@@ -5,6 +5,7 @@
 # ALGORITHM:
 ## Step1:Initialize Variables
 Set five 32-bit words:
+
 h0 = 0x67452301  
 h1 = 0xEFCDAB89  
 h2 = 0x98BADCFE  
@@ -17,12 +18,21 @@ b. Append 0 bits until the length is 64 bits short of a multiple of 512
 
 c. Append the original message length (in bits) as a 64-bit big-endian integer
 ## Step3: Process the Message in 512-bit Blocks
-For each 512-bit block: a. Divide block into 16 words W[0..15] (32 bits each)
+For each 512-bit block:
+
+a. Divide block into 16 words W[0..15] (32 bits each)
+
 b. Extend these into 80 words:
+
 for i from 16 to 79:
+
 W[i] = (W[i-3] XOR W[i-8] XOR W[i-14] XOR W[i-16]) left-rotated by 1
 ## Step4: Initialize Working Variables
-a = h0, b = h1, c = h2, d = h3, e = h4
+a = h0,
+b = h1,
+c = h2,
+d = h3,
+e = h4
 ## Step5: Main Compression Loop (80 Rounds)
 For i from 0 to 79:
 Determine: f and k based on i:
