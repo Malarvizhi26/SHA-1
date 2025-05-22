@@ -5,6 +5,7 @@
 # ALGORITHM:
 ## Step1:Initialize Variables
 Set five 32-bit words:
+
 h0 = 0x67452301  
 h1 = 0xEFCDAB89  
 h2 = 0x98BADCFE  
