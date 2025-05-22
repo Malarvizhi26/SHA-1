@@ -5,7 +5,6 @@
 # ALGORITHM:
 ## Step1:Initialize Variables
 Set five 32-bit words:
-
 h0 = 0x67452301  
 h1 = 0xEFCDAB89  
 h2 = 0x98BADCFE  
@@ -29,13 +28,18 @@ for i from 16 to 79:
 W[i] = (W[i-3] XOR W[i-8] XOR W[i-14] XOR W[i-16]) left-rotated by 1
 ## Step4: Initialize Working Variables
 a = h0,
+
 b = h1,
+
 c = h2,
+
 d = h3,
+
 e = h4
 ## Step5: Main Compression Loop (80 Rounds)
 For i from 0 to 79:
 Determine: f and k based on i:
+
 i =  0–19: f = (b & c) | (~b & d), k = 0x5A827999  
 i = 20–39: f = b ^ c ^ d,           k = 0x6ED9EBA1  
 i = 40–59: f = (b & c) | (b & d) | (c & d), k = 0x8F1BBCDC  
@@ -49,7 +53,9 @@ h1 = h1 + b
 h2 = h2 + c  
 h3 = h3 + d  
 h4 = h4 + e
+
 Final Output
+
 Concatenate h0 || h1 || h2 || h3 || h4 to produce the final 160-bit hash.
 
 
